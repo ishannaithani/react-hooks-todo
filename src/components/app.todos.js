@@ -10,7 +10,9 @@ const TodoApp = () => {
   return (
     <div className="todo-container effect2">
       <div>
-        <h2>List</h2>
+        <h2 className="heading">
+          <code>#todo with hooks</code>
+        </h2>
         <ul className="todo-list">
           {todos.map(todo => {
             const { id, text, isEditing } = todo;

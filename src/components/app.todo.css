@@ -7,6 +7,17 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: #fafafa;
+}
+
+.heading {
+  text-align: center;
+  display: block;
+}
+
+.heading > code {
+  border-bottom: 1px dotted #e0e0e0;
+  padding-bottom: 10px;
 }
 
 .todo-list {
@@ -16,6 +27,7 @@
   width: 500px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   margin-bottom: 10px;
+  margin-top: 30px;
 }
 
 .todo-list > li {
@@ -24,21 +36,23 @@
   border-bottom: none;
 }
 
+.todo-list > li input {
+  border: 0;
+  border-bottom: 1px dashed #000;
+  background: transparent;
+  font-size: 16px;
+  padding-bottom: 5px;
+  outline: none;
+}
+
 .todo-list > li:last-child {
   border-bottom: 1px solid #F0F1F2;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
-
-.todo-list > li:first-child {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
 
 .todo-list > li > div {
   justify-content: space-between;
   align-items: center;
+  min-height: 30px;
 }
 
 .todo-list > li > div a {
@@ -47,3 +61,29 @@
   text-decoration: none;
 }
 
+.add-todo {
+  display: flex;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.add-todo div:first-child {
+  width: 420px;
+}
+
+.add-todo div:last-child {
+  width: 80px;
+}
+
+.add-todo input {
+  width: 390px;
+  padding: 10px;
+  border: none;
+}
+
+.add-todo button {
+  width: 80px;
+  border: none;
+  padding: 10px 20px;
+  background-color: #3A84D9;
+  color: #fff
+}

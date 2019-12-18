@@ -5,12 +5,12 @@ export const initialState = {
   todos: [
     {
       id: 1,
-      text: "One",
+      text: "Buy milk",
       isEditing: false
     },
     {
       id: 2,
-      text: "Two",
+      text: "Pay bills",
       isEditing: false
     }
   ]
@@ -30,14 +30,24 @@ export const reducer = (state, action) => {
       };
     }
 
-    case ACTION_TYPES.EDIT_TODO: {
-      const { isEditing, text, id } = action.payload;
+    case ACTION_TYPES.START_EDIT_TODO: {
+      const { id } = action.payload;
+      let { todos } = state;
+      const todoIndex = todos.findIndex((todo) => id === todo.id);
+      todos = todos.map((todo) => { todo.isEditing = false; return todo });
+      todos[todoIndex].isEditing = true;
+      return {
+        counter: state.counter,
+        todos
+      };
+    }
+
+    case ACTION_TYPES.COMPLETE_EDIT_TODO: {
+      const { text, id } = action.payload;
       const { todos } = state;
       const todoIndex = todos.findIndex((todo) => id === todo.id);
-      
-      todos[todoIndex].isEditing = isEditing;
+      todos[todoIndex].isEditing = false;
       todos[todoIndex].text = text;
-      
       return {
         counter: state.counter,
         todos

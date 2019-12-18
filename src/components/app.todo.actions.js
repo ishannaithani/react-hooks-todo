@@ -3,7 +3,7 @@ import { AppContext } from '../App.context';
 import { ACTION_TYPES } from '../actions/app.actions';
 
 const editTodo = (dispatch, id) => {
-  dispatch({ type: ACTION_TYPES.EDIT_TODO, payload: { isEditing: true, id } });
+  dispatch({ type: ACTION_TYPES.START_EDIT_TODO, payload: { id } });
 }
 
 const removeTodo = (dispatch, id) => {
