@@ -13,8 +13,8 @@ const TodoApp = () => {
         <h2>List</h2>
         <ul className="todo-list">
           {todos.map(todo => {
-            const { id, text } = todo;
-            return <Todo key={id} id={id} text={text} />;
+            const { id, text, isEditing } = todo;
+            return <Todo key={id} id={id} text={text} isEditing={isEditing} />;
           })}
         </ul>
         <AddTodo />

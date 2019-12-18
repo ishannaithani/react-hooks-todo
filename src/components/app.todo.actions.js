@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../App.context';
+import { ACTION_TYPES } from '../actions/app.actions';
 
 const editTodo = (dispatch, id) => {
-  
+  dispatch({ type: ACTION_TYPES.EDIT_TODO, payload: { isEditing: true, id } });
 }
 
 const removeTodo = (dispatch, id) => {
-
+  dispatch({ type: ACTION_TYPES.REMOVE_TODO, payload: { id } });
 };
 
 const TodoActions = ({ id }) => {
